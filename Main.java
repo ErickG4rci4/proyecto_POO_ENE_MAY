@@ -3,6 +3,7 @@ import java.util.ArrayList;
 class Main{
 	
 	public static void main(String[] args) {
+		ArrayList <Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
 		String  menu  = "1.- Insertar \n";
     			menu += "2.- Eliminar\n";
     			menu += "3.- Mostrar Todos\n";
@@ -10,26 +11,22 @@ class Main{
     			menu += "5.- Buscar\n";
     			menu += "6.- Guardar\n";
     			menu += "7.- Salir\n";
-    	String input = null;
+    	String titulo = "Administrador de Instrumentos";
+    	int input;
     	int opcion = 0;
-    	ArrayList <Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
     	while(opcion!=7){
-    		try{
-    			input = JOptionPane.showInputDialog(null, menu, "Administrador instrumentos", JOptionPane.PLAIN_MESSAGE);	
-    			System.out.println(input);
-    			if (input.equals("")){
-    				JOptionPane.showMessageDialog(null,"Tienes que elegir una opcion");
-    				opcion = 0;
-    			}
-    			else
-    				opcion = Integer.parseInt(input);
-    		}
-    		catch (NumberFormatException e){
-    			JOptionPane.showMessageDialog(null,"Solo pon numeros");
-    		}
+    		input = Opcion.input(menu,titulo);
+    		opcion = input;
     		switch (opcion) {
     			case 1:
-    				agregar(input);
+    				String tipoIns  = "1.- Precusion\n";
+			  			   tipoIns += "2.- Cuerda\n";
+			   			   tipoIns += "3.- Viento\n";
+			   		input = Opcion.input(tipoIns,titulo);
+			   		if (input>3 || input<1) {
+			   			Opcion.output("Numero no valido");
+			   		}
+    				//agregar(input);
     			break;
     			case 2: 
     			break;
@@ -50,7 +47,69 @@ class Main{
 		}
 	}
 
-	public static void agregar(String input){
+	/*public T agregar(String input){
+		String nombre=null;
+		String marca=null;
+		int fechaFabricacion=0;
+		int opcion = 0;
+		boolean centinela=false;
+		boolean electrico=false;
+		while(nombre==null){
+			input = JOptionPane.showInputDialog(null,"Dame el nombre de tu Instrumento", JOptionPane.PLAIN_MESSAGE);
+			if (input.equals(""))
+				JOptionPane.showMessageDialog(null,"Escribe algo");
+			else
+				nombre = input;
+		}
+
+		while(marca==null){
+			input = JOptionPane.showInputDialog(null,"Que marca es?",JOptionPane.PLAIN_MESSAGE);
+			if (input.equals("")) 
+				JOptionPane.showMessageDialog(null,"Escribe algo");
+			else
+				marca = input;
+		}
+
+		while (fechaFabricacion==0) {
+			input = JOptionPane.showInputDialog(null,"Anio de fabricacion",JOptionPane.PLAIN_MESSAGE);
+			if (input.equals(""))
+				JOptionPane.showMessageDialog(null,"Escribe algo");
+			else{
+				try{
+					fechaFabricacion = Integer.parseInt(input);
+				}
+				catch (NumberFormatException e){ 
+					JOptionPane.showMessageDialog(null,"Solo numeros");
+				}
+			}
+		}
+
+		while(centinela==false){
+			input = JOptionPane.showInputDialog(null,"Es electrico?\n1.- Si\n2.- No",JOptionPane.PLAIN_MESSAGE);
+			if (input.equals("")) 
+				JOptionPane.showMessageDialog(null,"Escribe algo");
+			try{
+				opcion = Integer.parseInt(input);
+				if (opcion<1 || opcion>2)
+					JOptionPane.showMessageDialog(null,"Numero no valido");
+				else if (opcion==1) {
+					electrico = true;
+					centinela = true;
+				}
+				else
+					centinela = true;			
+			}
+			catch(NumberFormatException e){
+				JOptionPane.showMessageDialog(null,"Solo numeros");
+			}
+		}
+		T.agregar(input);
+	}
+
+
+
+
+	public static void agregar2(String input){
 		String menu  = "1.- Precusion\n";
 			   menu += "2.- Cuerda\n";
 			   menu += "3.- Viento\n";
@@ -155,5 +214,5 @@ class Main{
 			break;
 			default: 	
 		}		
-	}
+	}*/
 }
