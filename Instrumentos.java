@@ -1,5 +1,5 @@
 class Instrumentos{
-	//Atribitos
+	//Atributos
 	public String nombre;
 	public String marca;
 	public int fechaFabricacion;
