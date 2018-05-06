@@ -1,7 +1,8 @@
 // Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
 // 07 de Mayo del 2018
+import java.io.*;
 
-class InstCuerda extends Instrumentos{
+class InstCuerda extends Instrumentos implements Serializable{
 	
 	private Cuerdas misCuerdas;
 	public String tipo;

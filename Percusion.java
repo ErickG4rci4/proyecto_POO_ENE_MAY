@@ -1,9 +1,10 @@
 // Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
+import java.io.*;
 import javax.swing.JOptionPane;
 
-class Percusion extends Instrumentos{
+class Percusion extends Instrumentos implements Serializable{
 	//Atributos
 	public boolean afinados;
 	public Baquetas palos;

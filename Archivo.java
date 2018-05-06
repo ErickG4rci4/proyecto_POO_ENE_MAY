@@ -4,22 +4,22 @@
 import java.io.*;
 import java.util.*;
 
-class Archivo{
+class Archivo implements Serializable{
 
-	public static void borrar(){}
+	
+	//public static void borrar(){}
 
 	public static <T> void guardar( T[] inputArray ){
 		String tmp;
 		File archivo = new File("Data.txt");
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(archivo));
+			FileOutputStream arch = new FileOutputStream(archivo);
+			ObjectOutputStream Obj = new ObjectOutputStream(arch);
 			for (T element : inputArray){
-				tmp = element.toString();
-				writer.write(tmp);
-				writer.newLine();
+				Obj.writeObject(element);
 			}
-			writer.close();
-		} 
+			Obj.close();
+		}
 		catch (IOException e) {
     		System.err.println(e);
     		System.exit(1);
