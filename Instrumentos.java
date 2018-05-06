@@ -1,3 +1,6 @@
+// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
+// 05 de Febrero del 2018
+
 class Instrumentos{
 	//Atributos
 	public String nombre;
