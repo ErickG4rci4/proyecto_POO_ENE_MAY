@@ -1,5 +1,5 @@
 // Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
-// 05 de Febrero del 2018
+// 07 de Mayo del 2018
 import javax.swing.JOptionPane;
 
 class Percusion extends Instrumentos{
@@ -16,31 +16,24 @@ class Percusion extends Instrumentos{
 	//Metodos
 
 	public void crear(){
-		int op = 99;
+		int op = 99, temp = 99;
 		String 	menu  = "Tu instrumento usa palos?\n";
 				menu += "1.- Si\n"; 
 				menu += "2.- No\n";
-		while(op>=3 || op<=0){ 
-			op = Opcion.input(menu,"Palos para Percusion");
-			if (op>=3 || op<=0){
-				JOptionPane.showMessageDialog(null, "Número no válido");
-			}
-		}
+		op = Opcion.inputInt(menu,"Palos para Percusion",1,2);
 		if (op == 1){
 			String tipoMadera = "", forma = "", nombrePalos = "";
 			tipoMadera = Opcion.inputString("Que tipo de madera usan tus palos?", "Palos para Percusion");
-			while(!"conica".equalsIgnoreCase(forma) || !"cilindrica".equalsIgnoreCase(forma)){ 
-				forma = Opcion.inputString("Que tipo forma tienen tus palos?\n" + "1.- Conica\n" + "2.- Cilindrica\n", "Palos para Percusion");
-				if (!"conica".equalsIgnoreCase(forma) || !"cilindrica".equalsIgnoreCase(forma)){
-					JOptionPane.showMessageDialog(null, "Solo numeros !");
-				}
-			}
-			while(!"masas".equalsIgnoreCase(nombrePalos) || !"masas".equalsIgnoreCase(nombrePalos)){ 
-				nombrePalos = Opcion.inputString("Como le llamas a tus palos?\n" + "1.- Baquetas\n" + "2.- Masas\n", "Palos para Percusion");
-				if (!"baquetas".equalsIgnoreCase(nombrePalos) || !"masas".equalsIgnoreCase(nombrePalos)){
-					JOptionPane.showMessageDialog(null, "Solo numeros !");
-				}
-			}
+			temp = Opcion.inputInt("Que tipo forma tienen tus palos?\n" + "1.- Conica\n" + "2.- Cilindrica\n", "Palos para Percusion",1,2);
+			if (temp == 1)
+				forma = "Conica";
+			else 
+				forma = "Cilindrica";
+			temp = Opcion.inputInt("Como le llamas a tus palos?\n" + "1.- Baquetas\n" + "2.- Masas\n", "Palos para Percusion",1,2);
+			if (temp == 1)
+				nombrePalos = "Baquetas";
+			else 
+				nombrePalos = "Masas";
 			palos = new Baquetas(tipoMadera,forma,nombrePalos);
 		}
 		else {

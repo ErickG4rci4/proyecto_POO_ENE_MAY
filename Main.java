@@ -36,7 +36,7 @@ class Main{
     			break;
     			case 5: 
     			break;
-    			case 6: 
+    			case 6:
     			break;
     			case 7: 
     			break;
