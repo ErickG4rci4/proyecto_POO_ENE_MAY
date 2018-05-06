@@ -2,6 +2,6 @@
 // 05 de Febrero del 2018
 
 import java.util.ArrayList;
-class Bodega{
+class <T> Bodega{
 	ArrayList<Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
 }
