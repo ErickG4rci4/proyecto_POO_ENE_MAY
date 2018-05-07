@@ -2,19 +2,19 @@
 // 07 de Mayo del 2018
 
 import javax.swing.JOptionPane;
-
+import java.util.ArrayList;
 public class Opcion {
 
    	public static int input(String menu, String titulo){
-   		String input = "null";
+   		String input="null";
    		boolean centinela = false;
    		int output = 99;
-		while(centinela == false){
+		while(centinela==false){
 			try{
 				input = JOptionPane.showInputDialog(null, menu, titulo, JOptionPane.PLAIN_MESSAGE);
         		if (input.equals(""))
         			JOptionPane.showMessageDialog(null, "Tienes que elegir una opcion!" );
-        		else {
+        		else{
 	        		output = Integer.parseInt(input);
 	        		centinela = true;
         		}
@@ -36,7 +36,7 @@ public class Opcion {
 				JOptionPane.showMessageDialog(null,"Escribe algo");
 			try{
 				output = Integer.parseInt(input);
-				if (output < a || output > b)
+				if (output<a || output>b)
 					JOptionPane.showMessageDialog(null,"Numero no valido");
 				else
 					centinela = true;
@@ -62,6 +62,26 @@ public class Opcion {
         	}
 		}
 		return output;
+	}
+
+	public static <T> void showAll(ArrayList<T> miArray){
+		String linea = "";
+		for (int i = 0;i < miArray.size();i++) {
+			linea += (i + 1) + ".- " + miArray.get(i);
+			linea += "\n";
+		}
+		JOptionPane.showMessageDialog(null,linea);
+	}
+
+	public static String showNombre(ArrayList<Instrumentos> miArray){
+		String linea="";
+		int i=1;
+		for (Instrumentos element : miArray) {
+			linea += i + ".- " + element.getNombre();
+			linea += "\n";
+			i++;
+		}
+		return linea;
 	}
 
 	public static void output(String mensaje){

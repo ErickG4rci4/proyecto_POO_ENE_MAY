@@ -1,213 +1,56 @@
+// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
+// 07 de Mayo del 2018
+
+
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+
 class Main{
-	
 	public static void main(String[] args) {
 		Bodega miBodega = new Bodega();
-		String  menu  = "1.- Insertar \n";
-    			menu += "2.- Eliminar\n";
-    			menu += "3.- Mostrar Todos\n";
-    			menu += "4.- Ordenar\n";
-    			menu += "5.- Buscar\n";
-    			menu += "6.- Guardar\n";
-    			menu += "7.- Salir\n";
-    	String titulo = "Administrador de Instrumentos";
-    	int input;
-    	int opcion = 0;
-    	while(opcion!=7){
-    		input = Opcion.input(menu,titulo);
-    		opcion = input;
-    		switch (opcion) {
-    			case 1:
-				miBodega.agregar();
-				miBodega.guardar();
-    			break;
-    			case 2: 
-    			//Bodega.eliminar();
-    			break;
-    			case 3: 
-    			break;
-    			case 4:
-    			break;
-    			case 5: 
-    			break;
-    			case 6: 
-    			break;
-    			case 7: 
-    			break;
-    			default: 
-    			System.out.println("");
-
-    		}
-		}
-	}
-
-	/*public T agregar(String input){
-		String nombre=null;
-		String marca=null;
-		int fechaFabricacion=0;
-		int opcion = 0;
-		boolean centinela=false;
-		boolean electrico=false;
-		while(nombre==null){
-			input = JOptionPane.showInputDialog(null,"Dame el nombre de tu Instrumento", JOptionPane.PLAIN_MESSAGE);
-			if (input.equals(""))
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			else
-				nombre = input;
-		}
-
-		while(marca==null){
-			input = JOptionPane.showInputDialog(null,"Que marca es?",JOptionPane.PLAIN_MESSAGE);
-			if (input.equals("")) 
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			else
-				marca = input;
-		}
-
-		while (fechaFabricacion==0) {
-			input = JOptionPane.showInputDialog(null,"Anio de fabricacion",JOptionPane.PLAIN_MESSAGE);
-			if (input.equals(""))
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			else{
-				try{
-					fechaFabricacion = Integer.parseInt(input);
-				}
-				catch (NumberFormatException e){ 
-					JOptionPane.showMessageDialog(null,"Solo numeros");
-				}
-			}
-		}
-
-		while(centinela==false){
-			input = JOptionPane.showInputDialog(null,"Es electrico?\n1.- Si\n2.- No",JOptionPane.PLAIN_MESSAGE);
-			if (input.equals("")) 
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			try{
-				opcion = Integer.parseInt(input);
-				if (opcion<1 || opcion>2)
-					JOptionPane.showMessageDialog(null,"Numero no valido");
-				else if (opcion==1) {
-					electrico = true;
-					centinela = true;
-				}
-				else
-					centinela = true;			
-			}
-			catch(NumberFormatException e){
-				JOptionPane.showMessageDialog(null,"Solo numeros");
-			}
-		}
-		T.agregar(input);
-	}
-
-
-
-
-	public static void agregar2(String input){
-		String menu  = "1.- Precusion\n";
-			   menu += "2.- Cuerda\n";
-			   menu += "3.- Viento\n";
-		String nombre=null;
-		String marca=null;
-		int fechaFabricacion=0;
-		int opcion = 0;
-		boolean centinela=false;
-		boolean electrico=false;
-		while(nombre==null){
-			input = JOptionPane.showInputDialog(null,"Dame el nombre de tu Instrumento", JOptionPane.PLAIN_MESSAGE);
-			if (input.equals(""))
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			else
-				nombre = input;
-		}
-
-		while(marca==null){
-			input = JOptionPane.showInputDialog(null,"Que marca es?",JOptionPane.PLAIN_MESSAGE);
-			if (input.equals("")) 
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			else
-				marca = input;
-		}
-
-		while (fechaFabricacion==0) {
-			input = JOptionPane.showInputDialog(null,"Anio de fabricacion",JOptionPane.PLAIN_MESSAGE);
-			if (input.equals(""))
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			else{
-				try{
-					fechaFabricacion = Integer.parseInt(input);
-				}
-				catch (NumberFormatException e){ 
-					JOptionPane.showMessageDialog(null,"Solo numeros");
-				}
-			}
-		}
-
-		while(centinela==false){
-			input = JOptionPane.showInputDialog(null,"Es electrico?\n1.- Si\n2.- No",JOptionPane.PLAIN_MESSAGE);
-			if (input.equals("")) 
-				JOptionPane.showMessageDialog(null,"Escribe algo");
-			try{
-				opcion = Integer.parseInt(input);
-				if (opcion<1 || opcion>2)
-					JOptionPane.showMessageDialog(null,"Numero no valido");
-				else if (opcion==1) {
-					electrico = true;
-					centinela = true;
-				}
-				else
-					centinela = true;			
-			}
-			catch(NumberFormatException e){
-				JOptionPane.showMessageDialog(null,"Solo numeros");
-			}
-		}
-
 		try{
-			input = JOptionPane.showInputDialog(null,menu,"Instrumento", JOptionPane.PLAIN_MESSAGE);
-			if (input.equals("")) 
-				JOptionPane.showMessageDialog(null,"Elige una opcion!");
-			else if (Integer.parseInt(input)>3 || Integer.parseInt(input)<1)
-				JOptionPane.showMessageDialog(null,"Numero no valido");
-			else
-				opcion = Integer.parseInt(input);
+			String  menu  = "1.- Insertar \n";
+    				menu += "2.- Eliminar\n";
+    				menu += "3.- Mostrar Todos\n";
+    				menu += "4.- Ordenar\n";
+    				menu += "5.- Buscar\n";
+    				menu += "6.- Guardar\n";
+    				menu += "7.- Salir\n";
+    		String titulo = "Administrador de Instrumentos";
+    		int input;
+    		int opcion = 0;
+    		while(opcion!=7){
+    			input = Opcion.input(menu,titulo);
+    			opcion = input;
+    			switch (opcion) {
+    				case 1:
+					miBodega.agregar();
+    				break;
+    				case 2: 
+    				miBodega.eliminar();
+    				break;
+    				case 3:
+    				miBodega.mostrarTodos();
+    				break;
+    				case 4:
+    				break;
+    				case 5: 
+    				break;
+    				case 6: 
+    				miBodega.guardar();
+    				break;
+    				case 7: 
+    				break;
+    				default: 
+    				System.out.println("");
+    			}
+			}
 		}
-		catch(NumberFormatException e){
-			JOptionPane.showMessageDialog(null,"Solo numeros");
+		catch (NullPointerException e){
+			Opcion.output("Adios");
 		}
-		
-		switch (opcion) {
-			case 1: 
-				boolean afinados=false;
-				centinela = false;
-				while(centinela==false){
-					input = JOptionPane.showInputDialog(null,"Es de tipo afinado?\n1.- Si\n2.- No",JOptionPane.PLAIN_MESSAGE);
-					if (input.equals("")) 
-						JOptionPane.showMessageDialog(null,"Escribe algo");
-					try{
-						opcion = Integer.parseInt(input);
-						if (opcion<1 || opcion>2)
-							JOptionPane.showMessageDialog(null,"Numero no valido");
-						else if (opcion==1) {
-							afinados = true;
-							centinela = true;
-						}
-						else
-							centinela = true;			
-					}
-					catch(NumberFormatException e){
-						JOptionPane.showMessageDialog(null,"Solo numeros");
-					}
-				}
-			break;
-			case 2: 
-
-			break;
-			case 3: 
-
-			break;
-			default: 	
-		}		
-	}*/
+		finally{
+			miBodega.guardar();
+		}
+	}
 }

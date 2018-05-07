@@ -3,7 +3,7 @@
 
 abstract class Instrumentos{
 
-	public String nombre;
+	protected String nombre;
 	public String marca;
 	public int fechaFabricacion;
 	public boolean electrico;
@@ -19,6 +19,10 @@ abstract class Instrumentos{
 	}
 
 	Instrumentos(){}
+
+	String getNombre(){
+		return nombre;
+	}
 
 	abstract Instrumentos crear(String nombre, String marca, int fechaFabricacion, int electrico);
 
