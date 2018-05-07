@@ -1,7 +1,8 @@
 // Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
-class Baquetas{
+class Baquetas {
+
 	public String nombre;
 	public String tipoMadera;
 	public String forma;
@@ -13,6 +14,7 @@ class Baquetas{
 	}
 
 	public String toString(){
-		return forma;
+		return nombre + " " + forma + " " + tipoMadera;
 	}
+
 }

@@ -2,12 +2,10 @@
 // 07 de Mayo del 2018
 
 class Percusion extends Instrumentos{
-	//Atributos
 
 	public boolean afinados;
 	public Baquetas palos;
 	
-	//Constructor
 	Percusion (String nombre, String marca, int fechaFabricacion, int electrico, int afinadosotro, Baquetas palos){
 		super(nombre,marca,fechaFabricacion,electrico);
 		this.palos = palos;
@@ -17,11 +15,8 @@ class Percusion extends Instrumentos{
 			this.afinados=false;
 	}
 
-	Percusion(){
-
-	}
+	Percusion(){}
 		
-	//Metodos
 	public Percusion crear(String nombre, String marca, int fechaFabricacion, int electrico){
 		String menu = "¿Es de tipo afinado?\n" + "1.- Si\n" + "2.- No";
 		int afinado = Opcion.inputInt(menu,"Percusion",1,2);
@@ -51,8 +46,8 @@ class Percusion extends Instrumentos{
 		return new Percusion (nombre,marca,fechaFabricacion,electrico,afinado,palos);
 	}
 
-
 	public String toString(){
 		return super.toString() + "\nTipo: Percusion" + "\nAfinado: " + afinados + "\nSe toca con: " + palos;
 	}
+	
 }

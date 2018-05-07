@@ -2,13 +2,12 @@
 // 07 de Mayo del 2018
 
 abstract class Instrumentos{
-	//Atributos
+
 	public String nombre;
 	public String marca;
 	public int fechaFabricacion;
 	public boolean electrico;
 
-	//Constructor
 	Instrumentos(String nombre, String marca, int fechaFabricacion, int electrico){
 		this.nombre = nombre;
 		this.marca = marca;
@@ -17,16 +16,9 @@ abstract class Instrumentos{
 			this.electrico = true;
 		else
 			this.electrico = false;
-
 	}
 
-	Instrumentos(){
-
-	}
-	//Metodos
-	//abstract void tocar();
-
-	//abstract void afinar();
+	Instrumentos(){}
 
 	abstract Instrumentos crear(String nombre, String marca, int fechaFabricacion, int electrico);
 

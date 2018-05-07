@@ -2,18 +2,19 @@
 // 07 de Mayo del 2018
 
 import javax.swing.JOptionPane;
+
 public class Opcion {
 
    	public static int input(String menu, String titulo){
-   		String input="null";
+   		String input = "null";
    		boolean centinela = false;
    		int output = 99;
-		while(centinela==false){
+		while(centinela == false){
 			try{
 				input = JOptionPane.showInputDialog(null, menu, titulo, JOptionPane.PLAIN_MESSAGE);
         		if (input.equals(""))
         			JOptionPane.showMessageDialog(null, "Tienes que elegir una opcion!" );
-        		else{
+        		else {
 	        		output = Integer.parseInt(input);
 	        		centinela = true;
         		}
@@ -27,15 +28,15 @@ public class Opcion {
 
 	public static int inputInt(String menu, String titulo, int a, int b){
 		String input;
-		int output=0;
+		int output = 0;
 		boolean centinela = false;
-		while(centinela==false){
+		while(centinela == false){
 			input = JOptionPane.showInputDialog(null,menu,JOptionPane.PLAIN_MESSAGE);
 			if (input.equals("")) 
 				JOptionPane.showMessageDialog(null,"Escribe algo");
 			try{
 				output = Integer.parseInt(input);
-				if (output<a || output>b)
+				if (output < a || output > b)
 					JOptionPane.showMessageDialog(null,"Numero no valido");
 				else
 					centinela = true;

@@ -4,11 +4,10 @@
 import java.io.*;
 import java.util.*;
 
-class Archivo implements Serializable{
-
+class Archivo {
 
 	public static void borrar(){
-		
+
 	}
 
 	public static <T> void guardar(ArrayList<T> inputArray ){

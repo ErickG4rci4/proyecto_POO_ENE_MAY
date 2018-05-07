@@ -3,11 +3,11 @@
 import java.io.*;
 
 class Viento extends Instrumentos implements Serializable{
-	//Atributos
+
 	public String material;
 	public String clasificacion;
 	public String forma;
-	//Constructores
+	
 	Viento(String nombre, String marca, int fechaFabricacion, int electrico, String material, String clasificacion, String forma){
 		super(nombre,marca,fechaFabricacion,electrico);
 		this.material = material;
@@ -15,25 +15,22 @@ class Viento extends Instrumentos implements Serializable{
 		this.forma = forma;
 	}
 
-	Viento(){
+	Viento(){}
 
-	}
-
-	//Metodos
 	public Viento crear(String nombre, String marca, int fechaFabricacion, int electrico){
 		String forma, clasificacion, material;
 		material = Opcion.inputString("¿De que materia esta hecho?","Viento");
 		String menu = "¿Que forma tiene?\n" + "1.- Conico\n" + "2.- Cilindrica\n";
 		int opcion = Opcion.inputInt(menu,"Viento",1,2);
-		if (opcion==1)
+		if (opcion == 1)
 			forma = "Conico";
 		else
 			forma = "Cilindrica";
 		menu = "¿A que grupo pertenece?\n" + "1.- Embocadura\n" + "2.- Lengueta\n" + "3.- Boquilla";
 		opcion = Opcion.inputInt(menu,"Viento",1,3);
-		if (opcion==1) 
+		if (opcion == 1) 
 			clasificacion = "Embocadura";
-		else if (opcion==2) 
+		else if (opcion == 2) 
 			clasificacion = "Lengueta";
 		else 
 			clasificacion = "Boquilla";
