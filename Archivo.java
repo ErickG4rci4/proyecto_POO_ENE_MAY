@@ -8,7 +8,7 @@ class Archivo implements Serializable{
 
 
 	public static void borrar(){
-
+		
 	}
 
 	public static <T> void guardar(ArrayList<T> inputArray ){
