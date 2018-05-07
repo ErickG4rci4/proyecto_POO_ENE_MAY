@@ -3,7 +3,7 @@ import java.util.ArrayList;
 class Main{
 	
 	public static void main(String[] args) {
-		ArrayList <Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
+		Bodega miBodega = new Bodega();
 		String  menu  = "1.- Insertar \n";
     			menu += "2.- Eliminar\n";
     			menu += "3.- Mostrar Todos\n";
@@ -19,16 +19,11 @@ class Main{
     		opcion = input;
     		switch (opcion) {
     			case 1:
-    				String tipoIns  = "1.- Precusion\n";
-			  			   tipoIns += "2.- Cuerda\n";
-			   			   tipoIns += "3.- Viento\n";
-			   		input = Opcion.input(tipoIns,titulo);
-			   		if (input>3 || input<1) {
-			   			Opcion.output("Numero no valido");
-			   		}
-    				//agregar(input);
+				miBodega.agregar();
+				miBodega.guardar();
     			break;
     			case 2: 
+    			//Bodega.eliminar();
     			break;
     			case 3: 
     			break;
@@ -36,7 +31,7 @@ class Main{
     			break;
     			case 5: 
     			break;
-    			case 6:
+    			case 6: 
     			break;
     			case 7: 
     			break;

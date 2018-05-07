@@ -6,12 +6,14 @@ import java.util.*;
 
 class Archivo implements Serializable{
 
-	
-	//public static void borrar(){}
 
-	public static <T> void guardar( T[] inputArray ){
+	public static void borrar(){
+
+	}
+
+	public static <T> void guardar(ArrayList<T> inputArray ){
 		String tmp;
-		File archivo = new File("Data.txt");
+		File archivo = new File("Data.ser");
 		try {
 			FileOutputStream arch = new FileOutputStream(archivo);
 			ObjectOutputStream Obj = new ObjectOutputStream(arch);

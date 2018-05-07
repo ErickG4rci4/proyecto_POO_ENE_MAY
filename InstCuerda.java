@@ -10,15 +10,17 @@ class InstCuerda extends Instrumentos implements Serializable{
 	
 	//Constructor
 	
-	Cuerda(String nombre, String marca, int fechaFabricacion, boolean electrico,String tipo, String material, Cuerdas misCuerdas){
+	Cuerda(String nombre, String marca, int fechaFabricacion, int electrico,String tipo, String material, Cuerdas misCuerdas){
 		super(nombre,marca,fechaFabricacion,electrico);
 		this.tipo = tipo;
 		this.material = material;
 		this.misCuerdas = misCuerdas;
 	}
 
+	Cuerda(){}
+
 	void crear(){
-		input 
+		input
 		this.misCuerdas = new ();
 	}
 

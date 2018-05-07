@@ -9,19 +9,26 @@ abstract class Instrumentos{
 	public boolean electrico;
 
 	//Constructor
-	Instrumentos(String nombre, String marca, int fechaFabricacion, boolean electrico){
+	Instrumentos(String nombre, String marca, int fechaFabricacion, int electrico){
 		this.nombre = nombre;
 		this.marca = marca;
 		this.fechaFabricacion = fechaFabricacion;
-		this.electrico = electrico;
+		if (electrico==1) 
+			this.electrico = true;
+		else
+			this.electrico = false;
+
 	}
 
+	Instrumentos(){
+
+	}
 	//Metodos
 	//abstract void tocar();
 
 	//abstract void afinar();
 
-	abstract void crear();
+	abstract Instrumentos crear(String nombre, String marca, int fechaFabricacion, int electrico);
 
 	public String toString(){
 		return "Nombre: " + nombre + "\nMarca: " + marca + "\nFabricado en " + fechaFabricacion + "\nElectrico: " + electrico; 
