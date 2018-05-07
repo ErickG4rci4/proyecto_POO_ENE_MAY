@@ -1,5 +1,6 @@
-// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
+// Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
 // 07 de Mayo del 2018
+
 import java.io.*;
 
 class Viento extends Instrumentos implements Serializable{
@@ -16,6 +17,14 @@ class Viento extends Instrumentos implements Serializable{
 	}
 
 	Viento(){}
+
+	String getNombre(){
+		return nombre;
+	}
+
+	String getMarca(){
+		return marca;
+	}
 
 	public Viento crear(String nombre, String marca, int fechaFabricacion, int electrico){
 		String forma, clasificacion, material;
@@ -40,4 +49,5 @@ class Viento extends Instrumentos implements Serializable{
 	public String toString(){
 		return super.toString() + "\nMaterial: " + material + "\nClasificacion: " + clasificacion + "\nForma: " + forma;
 	}
+
 }

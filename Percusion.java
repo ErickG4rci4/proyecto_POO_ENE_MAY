@@ -1,7 +1,9 @@
-// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
+// Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
-class Percusion extends Instrumentos{
+import java.io.*;
+
+class Percusion extends Instrumentos implements Serializable{
 
 	public boolean afinados;
 	public Baquetas palos;
@@ -16,6 +18,14 @@ class Percusion extends Instrumentos{
 	}
 
 	Percusion(){}
+
+	String getNombre(){
+		return nombre;
+	}
+
+	String getMarca(){
+		return marca;
+	}
 		
 	public Percusion crear(String nombre, String marca, int fechaFabricacion, int electrico){
 		String menu = "¿Es de tipo afinado?\n" + "1.- Si\n" + "2.- No";

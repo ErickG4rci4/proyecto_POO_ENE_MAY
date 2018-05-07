@@ -1,13 +1,13 @@
-// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
+// Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
-class InstCuerda extends Instrumentos{
+import java.io.*;
+
+class InstCuerda extends Instrumentos implements Serializable{
 	
 	private Cuerdas misCuerdas;
 	public String tipo;
 	public String material;
-	
-	//Constructor
 	
 	InstCuerda(String nombre, String marca, int fechaFabricacion, int electrico,String tipo, String material, Cuerdas misCuerdas){
 		super(nombre,marca,fechaFabricacion,electrico);
@@ -17,6 +17,14 @@ class InstCuerda extends Instrumentos{
 	}
 
 	InstCuerda(){}
+
+	String getNombre(){
+		return nombre;
+	}
+
+	String getMarca(){
+		return marca;
+	}
 
 	public InstCuerda crear(String nombre, String marca, int fechaFabricacion, int electrico){
 		String menu = "Que tipo de cuerdas usa?\n" + "1.- Cuerdas Frotadas\n" + "2.- Cuerdas Golpeadas\n" + "3.- Cuerdas Pulsadas";

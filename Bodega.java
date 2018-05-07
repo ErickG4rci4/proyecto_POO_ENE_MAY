@@ -1,10 +1,11 @@
-// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
+// Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
-import java.util.ArrayList;
+import java.util.*;
 import java.io.*;
+
 class Bodega {
-	ArrayList<Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
+	public static ArrayList<Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
 
 	public void agregar(){
 		String nombre;
@@ -64,4 +65,18 @@ class Bodega {
 
 	}*/
 
+	public static < Instrumentos extends Comparable< Instrumentos > > void compare(boolean cen){
+		if (cen = true)
+			Collections.sort(misInstrumentos, new NameComparator());
+		else
+			Collections.sort(misInstrumentos, new BrandComparator());
+	}
+
+	//ordenarNombre(){
+//
+	//}
+//
+	//ordenarMarca(){
+//
+	//}
 }

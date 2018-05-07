@@ -1,7 +1,7 @@
-// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
+// Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
-abstract class Instrumentos{
+abstract class Instrumentos implements Comparable{
 
 	protected String nombre;
 	public String marca;
@@ -22,6 +22,10 @@ abstract class Instrumentos{
 
 	String getNombre(){
 		return nombre;
+	}
+
+	String getMarca(){
+		return marca;
 	}
 
 	abstract Instrumentos crear(String nombre, String marca, int fechaFabricacion, int electrico);
