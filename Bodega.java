@@ -1,11 +1,10 @@
-// Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
+// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
 import java.util.*;
 import java.io.*;
-
 class Bodega {
-	public static ArrayList<Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
+	static ArrayList<Instrumentos> misInstrumentos = new ArrayList<Instrumentos>();
 
 	public void agregar(){
 		String nombre;
@@ -40,7 +39,7 @@ class Bodega {
 
 	public void eliminar(){
 		String menu = Opcion.showNombre(misInstrumentos);
-		int eleccion = Opcion.inputInt(menu,"Eliminar",1,(misInstrumentos.size())-1);
+		int eleccion = Opcion.inputInt(menu,"Eliminar",1,(misInstrumentos.size()));
 		misInstrumentos.remove(eleccion-1);
 		menu = Opcion.showNombre(misInstrumentos);
 		Opcion.output(menu);
@@ -48,16 +47,6 @@ class Bodega {
 
 	public void mostrarTodos(){
 		Opcion.showAll(misInstrumentos);
-	}
-
-	public void guardar(){
-		Archivo.guardar(misInstrumentos);
-		System.out.println(misInstrumentos);
-	}
-
-	public  void cargar(){
-		ArrayList<Instrumentos> mi = new ArrayList<Instrumentos>();
-		mi = Archivo.cargar();
 	}
 
 	public void buscar(){
@@ -73,6 +62,17 @@ class Bodega {
 		if (encontrado == 0) {
 			Opcion.output("El elemento: " + otro + " no se encuentra");
 		}
+	}
+
+
+	public void guardar(){
+		Archivo.guardar(misInstrumentos);
+		System.out.println(misInstrumentos);
+	}
+
+	public  void cargar(){
+		ArrayList<Instrumentos> mi = new ArrayList<Instrumentos>();
+		mi = Archivo.cargar();
 	}
 
 	public void ordenaNombre() {

@@ -18,14 +18,6 @@ class Viento extends Instrumentos implements Serializable{
 
 	Viento(){}
 
-	String getNombre(){
-		return nombre;
-	}
-
-	String getMarca(){
-		return marca;
-	}
-
 	public Viento crear(String nombre, String marca, int fechaFabricacion, int electrico){
 		String forma, clasificacion, material;
 		material = Opcion.inputString("¿De que materia esta hecho?","Viento");

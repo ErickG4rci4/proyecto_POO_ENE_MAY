@@ -1,7 +1,8 @@
 // Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
-abstract class Instrumentos implements Comparable{
+
+abstract class Instrumentos implements Comparable<String>{
 
 	protected String nombre;
 	public String marca;
@@ -34,6 +35,16 @@ abstract class Instrumentos implements Comparable{
 
 	abstract Instrumentos crear(String nombre, String marca, int fechaFabricacion, int electrico);
 
+	@Override
+	public int compareTo(String otro){
+		if (nombre.equalsIgnoreCase(otro))
+			return 1;
+		else if (marca.equalsIgnoreCase(otro)) 
+			return 1;
+		else
+			return 0;
+	}
+	
 	public String toString(){
 		return "Nombre: " + nombre + "\nMarca: " + marca + "\nFabricado en " + fechaFabricacion + "\nElectrico: " + electrico; 
 	}

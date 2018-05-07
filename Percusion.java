@@ -18,14 +18,6 @@ class Percusion extends Instrumentos implements Serializable{
 	}
 
 	Percusion(){}
-
-	String getNombre(){
-		return nombre;
-	}
-
-	String getMarca(){
-		return marca;
-	}
 		
 	public Percusion crear(String nombre, String marca, int fechaFabricacion, int electrico){
 		String menu = "¿Es de tipo afinado?\n" + "1.- Si\n" + "2.- No";
