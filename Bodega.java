@@ -60,23 +60,60 @@ class Bodega {
 		mi = Archivo.cargar();
 	}
 
-	/*
-	buscar(){
-
-	}*/
-
-	public static < Instrumentos extends Comparable< Instrumentos > > void compare(boolean cen){
-		if (cen = true)
-			Collections.sort(misInstrumentos, new NameComparator());
-		else
-			Collections.sort(misInstrumentos, new BrandComparator());
+	public void buscar(){
+		int encontrado = 0;
+		String otro=Opcion.inputString("Dame la palabra clave","Busqueda");
+		for (int i = 0;i < misInstrumentos.size();i++) {
+			encontrado = misInstrumentos.get(i).compareTo(otro);
+			if (encontrado==1){
+				Opcion.output(misInstrumentos.get(i).toString());
+				i = misInstrumentos.size();
+			}
+		}
+		if (encontrado == 0) {
+			Opcion.output("El elemento: " + otro + " no se encuentra");
+		}
 	}
 
-	//ordenarNombre(){
-//
-	//}
-//
-	//ordenarMarca(){
-//
-	//}
+	public void ordenaNombre() {
+		Instrumentos[] tmp = new Instrumentos[misInstrumentos.size()+1];
+		int aux = misInstrumentos.size(), pos, a = 0, b = 0;
+		for (int i = 0; i < aux; i++){
+			pos = 0;
+			for (int j = 0; j < aux; j++){
+				if(misInstrumentos.get(i).getNombre().compareTo(misInstrumentos.get(j).getNombre()) > 0)
+					pos++;
+				if(misInstrumentos.get(i).getNombre().compareTo(misInstrumentos.get(j).getNombre()) == 0)
+					a = misInstrumentos.get(i).getMarca().compareTo(misInstrumentos.get(j).getMarca());
+					b = misInstrumentos.get(j).getMarca().compareTo(misInstrumentos.get(i).getMarca());
+					if(a > b)
+					pos++;
+			}
+			tmp[pos] = misInstrumentos.get(i);
+		}
+		misInstrumentos.clear();
+		for (int k = 0; k < aux; k++){
+			misInstrumentos.add(k, tmp[k]);
+		}
+	}
+
+	public void ordenaMarca(){
+		Instrumentos[] tmp = new Instrumentos[misInstrumentos.size()+1];
+		int aux = misInstrumentos.size(), pos;
+		for (int i = 0; i < aux; i++){
+			pos = 0;
+			for (int j = 0; j < aux; j++){
+				if(misInstrumentos.get(i).getMarca().compareTo(misInstrumentos.get(j).getMarca()) > 0)
+					pos++;
+				if(misInstrumentos.get(i).getMarca().compareTo(misInstrumentos.get(j).getMarca()) == 0)
+					if(misInstrumentos.get(i).getFechaFabricacion() > misInstrumentos.get(j).getFechaFabricacion())
+					pos++;
+			}
+			tmp[pos] = misInstrumentos.get(i);
+		}
+		misInstrumentos.clear();
+		for (int k = 0; k < aux; k++){
+			misInstrumentos.add(k, tmp[k]);
+		}
+	}
 }

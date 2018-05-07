@@ -28,6 +28,10 @@ abstract class Instrumentos implements Comparable{
 		return marca;
 	}
 
+	int getFechaFabricacion(){
+		return fechaFabricacion;
+	}
+
 	abstract Instrumentos crear(String nombre, String marca, int fechaFabricacion, int electrico);
 
 	public String toString(){

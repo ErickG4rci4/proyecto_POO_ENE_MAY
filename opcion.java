@@ -1,4 +1,4 @@
-// Erick Jair Garcia Barradas A01740197, Carlos Orozco A01328800
+// Erick Jair Garcia Barradas A01740197 ,  Carlos Orozco A01328800
 // 07 de Mayo del 2018
 
 import javax.swing.JOptionPane;
@@ -28,9 +28,9 @@ public class Opcion {
 
 	public static int inputInt(String menu, String titulo, int a, int b){
 		String input;
-		int output = 0;
+		int output=0;
 		boolean centinela = false;
-		while(centinela == false){
+		while(centinela==false){
 			input = JOptionPane.showInputDialog(null,menu,JOptionPane.PLAIN_MESSAGE);
 			if (input.equals("")) 
 				JOptionPane.showMessageDialog(null,"Escribe algo");
@@ -65,9 +65,9 @@ public class Opcion {
 	}
 
 	public static <T> void showAll(ArrayList<T> miArray){
-		String linea = "";
+		String linea="";
 		for (int i = 0;i < miArray.size();i++) {
-			linea += (i + 1) + ".- " + miArray.get(i);
+			linea += (i+1) + ".- " + miArray.get(i);
 			linea += "\n";
 		}
 		JOptionPane.showMessageDialog(null,linea);
